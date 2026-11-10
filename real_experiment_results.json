@@ -1,0 +1,38 @@
+{
+  "architecture": "Fixed VGG-16 Scratch 16 layers (13 Conv2D + 3 Dense)",
+  "total_parameters": 15245130,
+  "epochs": 15,
+  "optimizer": "Adam (lr=1e-4)",
+  "hardware": "Local Machine (Intel/AMD 16-thread CPU)",
+  "ablation_study_summary": {
+    "stage_0_baseline": {
+      "train_size": 2067,
+      "val_size": 813,
+      "val_accuracy": "65.81% (ảo do dính 49 ảnh rò rỉ MD5)",
+      "label_book_test_accuracy": "57.69%"
+    },
+    "stage_1_cleaning": {
+      "train_size": 2264,
+      "val_size": 566,
+      "val_accuracy": "60.88%",
+      "label_book_test_accuracy": "55.77%"
+    },
+    "stage_2_geometric": {
+      "train_size": 2264,
+      "val_size": 565,
+      "val_accuracy": "81.42%",
+      "label_book_test_accuracy": "84.62%"
+    },
+    "stage_4_repo_dat": {
+      "dataset_size": 9500,
+      "val_accuracy": "91.21% (ảo do Data Leakage trong Keras split)",
+      "label_book_test_accuracy": "80.77% (Bị tụt dốc)"
+    },
+    "stage_6_superior_pipeline": {
+      "dataset_size": 9900,
+      "val_accuracy": "81.67% - 82.00% (Thước đo sạch 100%, không rò rỉ)",
+      "label_book_test_accuracy": "84.62% - 90.38% (Outperform toàn diện)",
+      "gain_vs_baseline": "+26.93% (57.69% -> 84.62%)"
+    }
+  }
+}
