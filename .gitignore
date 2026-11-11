@@ -1,0 +1,19 @@
+# Model weights and big archives
+*.weights.h5
+*.h5
+*.tar.gz
+*.zip
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# Datasets
+data/
+dataset/
+superior_data_9900/
+clean_label_book/
+superior_clean_label_book/
+stage*_data/
